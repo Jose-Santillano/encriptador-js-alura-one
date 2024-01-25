@@ -21,7 +21,7 @@
     <div id="container" class="w-full h-full flex flex-col justify-center">
       <header class="m-8 text-center text-white">
         <h1 class="text-4xl mb-2">Encryptify <i class="fa-solid fa-ghost" style="color: #ffffff;"></i></h1>
-        <p>Encrypt your texts with ease. </p>
+        <p class="text-cyan-400">Encrypt your texts with ease. <a href="https://www.oracle.com/mx/education/oracle-next-education/">(Oracle Next Education - Alura)</a></p>
       </header>
 
       <div class="m-8 md:grid grid-cols-2 gap-6">
@@ -46,12 +46,12 @@
                 class="fa-solid fa-circle-exclamation"
                 style="color: #ffffff"
               ></i>
-              <p class="text-white">Only lowercase letters and no accents</p>
+              <p class="text-white">Only lowercase letters and no accents <span class="text-violet-400">(Will be removed)</span></p>
             </div>
             <div class="flex gap-6">
               <button
                 class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
-                onclick="encrypt()"
+                onclick="input(1)"
               >
                 <span
                   class="relative px-10 py-3 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-lg"
@@ -61,6 +61,7 @@
 
               <button
                 class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+                onclick="input(2)"
               >
                 <span
                   class="relative px-10 py-3 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 text-lg"
@@ -73,21 +74,23 @@
         </section>
 
         <!-- Output, result, ... -->
-        <section class="bg-slate-800 rounded-xl p-4">
+        <section class="bg-slate-800 rounded-xl p-4 border border-gray-100">
           <div class="flex items-center gap-1 mb-2">
             <i class="fa-solid fa-arrow-right" style="color: #ffffff"></i>
             <p class="text-white">This is the result of your message</p>
           </div>
           <textarea
-              id="message"
+              readonly
+              id="output"
               rows="18"
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
               placeholder="Your encrypted or decrypted message will appear here..."
             ></textarea>
           <div class="flex justify-end mt-7 gap-4 items-center">
-            <p class="text-white">Created by: José Santillano - 2023</p>
+            <p class="text-white">Created by: <a href="https://github.com/Jose-Santillano" class="text-violet-400">José Santillano</a> - 2023</p>
             <button
               class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+              onclick="copyToClipboard()"
             >
               <span
                 class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
